@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FlightApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="splash_app_name">Flight\nApp</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Parola</string>
+    <string name="remember_me">Beni Hatırla</string>
+    <string name="login">Giriş Yap</string>
+    <string name="airline">Havayolu : </string>
+    <string name="departure">Kalkış \t\t\t\t:</string>
+    <string name="arrival">Varış  \t\t\t\t\t:</string>
+    <string name="flight">Flight</string>
+    <string name="delay">Gecikme verisi mevcut değil.</string>
+    <string name="check_error">Bilgileriniz hatalıdır. Lütfen bilgilerini kontrol ediniz.</string>
+    <string name="email">appcent@appcent.mobi</string>
+    <string name="password">123456</string>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flight_app_nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.alicimsamil.flightapp.presentation.splash.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_loginScreenFragment"
+            app:destination="@id/loginScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginScreenFragment"
+        android:name="com.alicimsamil.flightapp.presentation.login.LoginScreenFragment"
+        android:label="fragment_login_screen"
+        tools:layout="@layout/fragment_login_screen" >
+        <action
+            android:id="@+id/action_loginScreenFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.alicimsamil.flightapp.presentation.flightlist.FlightListScreenFragment"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_list_screen" >
+        <action
+            android:id="@+id/action_mainScreenFragment_to_flightDetailFragment"
+            app:destination="@id/flightDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/flightDetailFragment"
+        android:name="com.alicimsamil.flightapp.presentation.flightdetail.FlightDetailFragment"
+        android:label="fragment_flight_detail"
+        tools:layout="@layout/fragment_flight_detail_screen" >
+        <action
+            android:id="@+id/action_flightDetailFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+        <argument
+            android:name="flightNumber"
+            app:argType="integer" />
+        <argument
+            android:name="airlineIata"
+            app:argType="string" />
+    </fragment>
+</navigation>

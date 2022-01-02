@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="12dp"
+        android:layout_marginHorizontal="@dimen/margin_medium"
+        android:layout_marginVertical="@dimen/margin_small_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAirlineTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="@string/airline"
+                android:textColor="@color/very_dark_desaturated_blue"
+                android:textFontWeight="900"
+                android:textSize="@dimen/text_size_semi_small"
+                android:textStyle="bold"
+                android:paddingEnd="@dimen/margin_small_small"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginStart="@dimen/margin_small_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAirlineInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:textFontWeight="400"
+                android:textColor="@color/very_dark_desaturated_blue"
+                tools:text=" Turkish Airlines"
+                android:textSize="@dimen/text_size_semi_small"
+                android:layout_marginStart="15dp"
+                app:layout_constraintTop_toTopOf="@id/tvAirlineTitle"
+                app:layout_constraintStart_toEndOf="@id/tvAirlineTitle"
+                app:layout_constraintBottom_toBottomOf="@id/tvAirlineTitle"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDepartureTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="@string/departure"
+                android:textColor="@color/very_dark_desaturated_blue"
+                android:textFontWeight="900"
+                android:textSize="@dimen/text_size_semi_small"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin_semi_small"
+                app:layout_constraintEnd_toEndOf="@+id/tvAirlineTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvAirlineTitle"
+                app:layout_constraintStart_toStartOf="@id/tvAirlineTitle"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDepartureInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:textFontWeight="400"
+                android:textColor="@color/very_dark_desaturated_blue"
+                tools:text=" SAW - 09:45"
+                android:textSize="@dimen/text_size_semi_small"
+                app:layout_constraintTop_toTopOf="@id/tvDepartureTitle"
+                app:layout_constraintStart_toStartOf="@id/tvAirlineInfo"
+                app:layout_constraintBottom_toBottomOf="@id/tvDepartureTitle"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvArrivalTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="@string/arrival"
+                android:textColor="@color/very_dark_desaturated_blue"
+                android:textFontWeight="900"
+                android:textSize="@dimen/text_size_semi_small"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin_semi_small"
+                android:layout_marginBottom="@dimen/margin_small_big"
+                app:layout_constraintEnd_toEndOf="@id/tvAirlineTitle"
+                app:layout_constraintBottom_toTopOf="@id/ivCardBottom"
+                app:layout_constraintTop_toBottomOf="@id/tvDepartureTitle"
+                app:layout_constraintStart_toStartOf="@id/tvAirlineTitle"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvArrivalInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:textFontWeight="400"
+                android:textColor="@color/very_dark_desaturated_blue"
+                tools:text=" ESB - 11:45"
+                android:textSize="@dimen/text_size_semi_small"
+                app:layout_constraintTop_toTopOf="@id/tvArrivalTitle"
+                app:layout_constraintStart_toStartOf="@id/tvAirlineInfo"
+                app:layout_constraintBottom_toBottomOf="@id/tvArrivalTitle"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCardBottom"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="@color/light_grayish_blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStatusColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:background="@drawable/yellow_circle_shape"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivCardBottom"
+                app:layout_constraintBottom_toBottomOf="@id/ivCardBottom"
+                android:layout_marginStart="@dimen/margin_semi_medium"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDelay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_delay"
+                android:layout_marginStart="@dimen/margin_small"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="@id/ivCardBottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivStatusColor"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDelay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="13 mi"
+                android:fontFamily="@font/roboto"
+                android:textSize="@dimen/text_size_very_small"
+                android:layout_marginStart="@dimen/margin_semi_small"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="@id/ivCardBottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivDelay"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right"
+                android:layout_marginEnd="@dimen/margin_semi_medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivCardBottom"
+                app:layout_constraintBottom_toBottomOf="@id/ivCardBottom"/>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

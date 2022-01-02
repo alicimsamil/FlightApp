@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.flightdetail.FlightDetailFragment">
+
+    <ProgressBar
+        android:id="@+id/pbStatusDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDetailBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/background"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFlightDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_semi_medium"
+        android:layout_marginTop="@dimen/margin_semi_big"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_small_medium"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="PX100 Flight Details" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_small_medium"
+        android:src="@drawable/close"
+        app:layout_constraintBottom_toBottomOf="@id/tvFlightDetail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvFlightDetail" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDetailAirbus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_background_sync"
+        android:src="@drawable/airbus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivDetailBackground" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsvTicket"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/margin_small_medium"
+        android:layout_marginTop="@dimen/margin_small_small"
+        android:layout_marginBottom="@dimen/margin_small_big"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivDetailAirbus">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_small_medium"
+            android:layout_marginTop="@dimen/margin_semi_small"
+            android:layout_marginBottom="@dimen/margin_semi_big"
+            app:layout_constraintBottom_toBottomOf="@id/nsvTicket"
+            app:layout_constraintEnd_toEndOf="@id/nsvTicket"
+            app:layout_constraintStart_toStartOf="@id/nsvTicket"
+            app:layout_constraintTop_toBottomOf="@id/nsvTicket">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTicketBlueBackground"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:src="@drawable/ticket_background_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.53"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDepartureAirportAbb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_semi_big"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="ESB" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvArrivalAirportAbb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_semi_big"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="SAW" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPlaneGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/planegroup"
+                app:layout_constraintBottom_toBottomOf="@+id/tvDepartureAirportAbb"
+                app:layout_constraintEnd_toStartOf="@+id/tvArrivalAirportAbb"
+                app:layout_constraintStart_toEndOf="@+id/tvDepartureAirportAbb"
+                app:layout_constraintTop_toTopOf="@+id/tvDepartureAirportAbb" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDepartureAirport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:alpha="0.7"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small_small"
+                app:layout_constraintStart_toStartOf="@+id/tvDepartureAirportAbb"
+                app:layout_constraintTop_toBottomOf="@id/tvDepartureAirportAbb"
+                tools:text="Esenboğa" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvArrivalAirport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_very_small"
+                android:alpha="0.7"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_small_small"
+                app:layout_constraintEnd_toEndOf="@+id/tvArrivalAirportAbb"
+                app:layout_constraintTop_toBottomOf="@id/tvArrivalAirportAbb"
+                tools:text="Sabiha Gökçen" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDepartureTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_semi_small"
+                android:layout_marginVertical="@dimen/margin_semi_small"
+                app:layout_constraintBottom_toBottomOf="@+id/ivTicketBlueBackground"
+                app:layout_constraintEnd_toStartOf="@+id/ivPlaneGroup"
+                app:layout_constraintStart_toStartOf="@+id/tvDepartureAirportAbb"
+                app:layout_constraintTop_toBottomOf="@+id/tvDepartureAirport"
+                tools:text="Thu, Aug 17 9:40 AM" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvArrivalTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_semi_small"
+                android:layout_marginVertical="@dimen/margin_semi_small"
+                app:layout_constraintBottom_toBottomOf="@+id/ivTicketBlueBackground"
+                app:layout_constraintEnd_toEndOf="@+id/tvArrivalAirportAbb"
+                app:layout_constraintStart_toEndOf="@+id/ivPlaneGroup"
+                app:layout_constraintTop_toBottomOf="@+id/tvArrivalAirport"
+                tools:text="Thu, Aug 17 9:40 AM" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTicketWhiteBackground"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:src="@drawable/ticket_background_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.47"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFlightNameChar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small_big"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_semi_small"
+                app:layout_constraintStart_toStartOf="@+id/tvDepartureAirportAbb"
+                app:layout_constraintTop_toTopOf="@id/ivTicketWhiteBackground"
+                android:text="Flight:" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFlightName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small_big"
+                android:textColor="@color/detail_dark_blue"
+                android:textSize="@dimen/text_size_semi_small"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tvTerminalName"
+                app:layout_constraintTop_toTopOf="@id/ivTicketWhiteBackground"
+                tools:text="PX100" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTerminalChar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small_big"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_semi_small"
+                app:layout_constraintStart_toStartOf="@+id/tvDepartureAirportAbb"
+                app:layout_constraintTop_toBottomOf="@id/tvFlightNameChar"
+                android:text="Terminal:" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTerminalName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/detail_dark_blue"
+                android:textSize="@dimen/text_size_semi_small"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@+id/tvTerminalChar"
+                app:layout_constraintTop_toTopOf="@id/tvTerminalChar"
+                tools:text="D" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGateNameChar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small_big"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_semi_small"
+                android:layout_marginEnd="@dimen/margin_semi_small"
+                app:layout_constraintEnd_toStartOf="@+id/tvGateName"
+                app:layout_constraintTop_toTopOf="@id/ivTicketWhiteBackground"
+                android:text="Gate:" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGateName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small_big"
+                android:textColor="@color/detail_dark_blue"
+                android:textSize="@dimen/text_size_semi_small"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tvArrivalAirportAbb"
+                app:layout_constraintTop_toTopOf="@id/ivTicketWhiteBackground"
+                tools:text="14F" />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDelayChar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small_big"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_semi_small"
+                app:layout_constraintEnd_toEndOf="@+id/tvGateNameChar"
+                app:layout_constraintTop_toBottomOf="@id/tvGateNameChar"
+                android:text="Delay:" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDelayDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/detail_dark_blue"
+                android:textSize="@dimen/text_size_semi_small"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tvGateName"
+                app:layout_constraintTop_toTopOf="@id/tvDelayChar"
+                tools:text="24A" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_gray"
+                android:layout_marginVertical="@dimen/margin_small_big"
+                app:layout_constraintTop_toBottomOf="@+id/tvTerminalChar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginHorizontal="@dimen/margin_small_big"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
